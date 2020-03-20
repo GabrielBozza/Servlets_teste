@@ -2,7 +2,10 @@ package br.com.exemplo.jdbc;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import br.com.exemplo.beans.Usuario;
 
@@ -68,6 +71,33 @@ public class UsuarioDAO {
 		catch (SQLException e ){
 			System.out.println("Erro - " + e.getMessage());
 		}
+		
+	}
+	
+	public List<Usuario> buscarTodos(Usuario usuario) {
+		
+		String sql = "SELECT * FROM USUARIO";
+		List<Usuario> lista = new ArrayList<Usuario>();
+		
+		try {
+			PreparedStatement preparador = conexao.prepareStatement(sql);
+			ResultSet resultados = preparador.executeQuery();
+			
+			while(resultados.next()){
+				Usuario prox_usuario = new Usuario();
+				
+				prox_usuario.setId(resultados.getInt("idusuario"));
+				prox_usuario.setNome(resultados.getString("nome"));
+				prox_usuario.setIdade(resultados.getInt("idade"));
+				
+				lista.add(prox_usuario);				
+			}
+		}
+		catch (SQLException e ){
+			System.out.println("Erro - " + e.getMessage());
+		}
+		
+		return lista;
 		
 	}
 }

@@ -1,5 +1,7 @@
 package br.com.exemplo.testeconexaobd;
 
+import java.util.List;
+
 import br.com.exemplo.beans.Usuario;
 import br.com.exemplo.jdbc.UsuarioDAO;
 
@@ -8,7 +10,8 @@ public class TesteDAO {
 	public static void main(String[] args) {
 		//testeCadastro();
 		//testeAlterar();
-		testeDeletar();
+		//testeDeletar();
+		testeBuscarTodos();
 	}
 	
 	public static void testeCadastro() {
@@ -36,6 +39,18 @@ public class TesteDAO {
 		
 		UsuarioDAO usuarioDAO = new UsuarioDAO();
 		usuarioDAO.deletar(usuario);
+	}
+	
+	public static void testeBuscarTodos() {
+		Usuario usuario = new Usuario();
+		UsuarioDAO usuarioDAO = new UsuarioDAO();
+		
+		List<Usuario> listaResultado = usuarioDAO.buscarTodos(usuario);
+		
+		for(Usuario u: listaResultado) {
+			System.out.println("Id: " + u.getId() + " Nome: " + u.getNome() + " Idade: " + u.getIdade());
+		}
+		
 	}
 
 }
