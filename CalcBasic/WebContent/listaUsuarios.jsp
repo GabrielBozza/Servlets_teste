@@ -1,5 +1,5 @@
 <%@page import="java.util.List"%>
-<%@page import="br.com.exemplo.beans.Usuario"%>
+<%@page import="br.com.exemplo.bean.Usuario"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -37,8 +37,8 @@ for(Usuario u:listaResultado){
  	<th><%=u.getEmail() %></th>
  	<th><%=u.getSenha() %></th>
  	<th><%=u.getDatainscricao() %></th>
- 	<th><a href="UsuarioControllador?acao=ex&id=<%=u.getId() %>">Excluir</a>
- 	<th><a href="UsuarioControllador?acao=alt&id=<%=u.getId()%>">Alterar</a>
+ 	<th><a href="UsuarioControlador?acao=ex&id=<%=u.getId() %>">Excluir</a>
+ 	<th><a href="UsuarioControlador?acao=alt&id=<%=u.getId()%>">Alterar</a>
  </tr>
 <%
 }

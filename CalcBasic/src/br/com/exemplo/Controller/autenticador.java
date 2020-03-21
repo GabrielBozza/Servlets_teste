@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import br.com.exemplo.beans.Usuario;
+import br.com.exemplo.bean.Usuario;
 import br.com.exemplo.jdbc.UsuarioDAO;
 /**
  * Servlet implementation class autenticador

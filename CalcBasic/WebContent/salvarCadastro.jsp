@@ -1,7 +1,7 @@
-<%@page import="java.sql.Date"%>
-<%@page import="java.text.SimpleDateFormat"%>
+<%@ page import="java.sql.Date"%>
+<%@ page import="java.text.SimpleDateFormat"%>
 <%@ page import="br.com.exemplo.jdbc.UsuarioDAO"%>
-<%@ page import="br.com.exemplo.beans.Usuario"%>
+<%@ page import="br.com.exemplo.bean.Usuario"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -13,7 +13,7 @@
 <body>
 	<%
 		String nome = request.getParameter("nome");
-		Integer idade = Integer.parseInt(request.getParameter("idade"));
+		String idade = request.getParameter("idade");
 		String email = request.getParameter("email");
 		String senha = request.getParameter("senha");
 		String data = request.getParameter("data");
@@ -24,7 +24,7 @@
 			
 			Usuario usuario = new Usuario();
 			usuario.setNome(nome);
-			usuario.setIdade(idade);
+			usuario.setIdade(Integer.parseInt(idade));
 			usuario.setEmail(email);
 			usuario.setSenha(senha);
 			usuario.setDatainscricao(date);

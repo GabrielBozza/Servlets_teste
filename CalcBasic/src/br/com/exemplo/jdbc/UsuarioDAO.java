@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.exemplo.beans.Usuario;
+import br.com.exemplo.bean.Usuario;
 
 //CADA CLASSE DO BD TEM UM ARQ EM BEANS COM A SUA CLASSE E OUTRO NO JDBC (DAO-DATA ACCESS OBJECT) PARA RECUPERAR DADOS DO BD
 public class UsuarioDAO {
@@ -113,7 +113,7 @@ public class UsuarioDAO {
 	public Usuario buscarporID(Integer id) {
 		
 		Usuario usuRetorno = null;
-		String sql = "SELECT * FROM USUARIO WHERE ID = ?";
+		String sql = "SELECT * FROM USUARIO WHERE IDUSUARIO = ?";
 		
 		try {
 			PreparedStatement preparador = conexao.prepareStatement(sql);
@@ -123,7 +123,7 @@ public class UsuarioDAO {
 		
 			if (resultado.next()) {
 				usuRetorno = new Usuario();
-				usuRetorno.setId(resultado.getInt("id"));
+				usuRetorno.setId(resultado.getInt("idusuario"));
 				usuRetorno.setNome(resultado.getString("nome"));
 				usuRetorno.setIdade(resultado.getInt("idade"));
 				usuRetorno.setEmail(resultado.getString("email"));

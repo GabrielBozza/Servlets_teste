@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.exemplo.beans.Usuario;
+import br.com.exemplo.bean .Usuario;
 import br.com.exemplo.jdbc.UsuarioDAO;
 /**
  * Servlet implementation class UsuarioControlador
@@ -69,7 +69,7 @@ public class UsuarioControlador extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Capturando parametros da tela
-		response.setContentType("text/html");
+		
 				String sid = request.getParameter("id");
 				String snome = request.getParameter("nome");
 				String sidade = request.getParameter("idade");

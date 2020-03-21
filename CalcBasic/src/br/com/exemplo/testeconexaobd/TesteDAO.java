@@ -2,7 +2,7 @@ package br.com.exemplo.testeconexaobd;
 
 import java.util.List;
 
-import br.com.exemplo.beans.Usuario;
+import br.com.exemplo.bean.Usuario;
 import br.com.exemplo.jdbc.UsuarioDAO;
 
 public class TesteDAO {

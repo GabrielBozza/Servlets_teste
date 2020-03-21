@@ -1,4 +1,4 @@
-<%@page import="br.com.exemplo.beans.Usuario"%>
+<%@ page import="br.com.exemplo.bean.Usuario"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -23,22 +23,23 @@ function formatar(mascara, documento){
 <jsp:include page="cabecalho.jsp"></jsp:include>
 	<%
 		Usuario usu = (Usuario)request.getAttribute("usuario");
+		System.out.println(usu.getId());
 	%>
-<form action="UsuarioControllador" method="post">
+<form action="UsuarioControlador" method="post">
 		<input type="hidden" name="acao" value="salvar">
 		
-		<label>ID:</label> <br>
-		<input size="5" type="text" name="id" value="<%=usu.getId()%>"><br>
+		<label>ID:</label>
+		<input size="5" type="text" name="id" value="<%=usu.getId()%>">
 		<label>Nome:</label> <br>
-		<input type="text" name="nome" value="<%=usu.getNome()%>"><br>
+		<input type="text" name="nome" value=<%=usu.getNome()%>>
 		<label>Idade:</label> <br>
-		<input type="number" name="idade" value="<%=usu.getIdade()%>"><br>
+		<input type="text" name="idade" value="<%=usu.getIdade()%>"><br>
 		<label>Email:</label> <br>
 		<input type="text" name="email" value="<%=usu.getEmail()%>"><br>
 		<label>Senha:</label> <br>
 		<input type="password" name="senha" value="<%=usu.getSenha()%>"> <br>
 		<label>Data de Incrição</label><br>
-		<input type="text" name="data" OnKeyPress="formatar('##/##/####', this)"><br>
+		<input type="text" name="data" OnKeyPress="formatar('##/##/####', this)"><BR>
 		
 		<input type="submit" value="SALVAR">
 	</form>

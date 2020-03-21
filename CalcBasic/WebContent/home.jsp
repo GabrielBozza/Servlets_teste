@@ -1,4 +1,4 @@
-<%@page import="br.com.exemplo.beans.Usuario"%>
+<%@page import="br.com.exemplo.bean.Usuario"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -12,8 +12,8 @@
 <h1>Curso Java Web!</h1>
 
 <%
-Usuario usuAutenticado = (Usuario)session.getAttribute("usuAutenticado");
-out.print("Seja bem vindo! ,"+usuAutenticado.getNome());
+//Usuario usuAutenticado = (Usuario)session.getAttribute("usuAutenticado");
+//out.print("Seja bem vindo! ,"+usuAutenticado.getNome());
 %>
 </body>
 </html>

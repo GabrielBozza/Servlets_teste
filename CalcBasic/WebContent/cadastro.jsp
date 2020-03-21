@@ -26,7 +26,7 @@ function formatar(mascara, documento){
 		<label>Nome:</label><br> 
 		<input type="text" name="nome"><br>
 		<label>Idade:</label> <br> 
-		<input type="number" name="idade"><br>
+		<input type="text" name="idade"><br>
 		<label>Email:</label><br> 
 		<input type="text" name="email"><br> 
 		<label>Senha:</label><br>
